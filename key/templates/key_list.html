@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Access Keys</title>
+</head>
+<body>
+    <h1>Your Access Keys</h1>
+    <ul>
+        {% for key in keys %}
+        <li>Status: {{ key.status }} | Date of Procurement: {{ key.date_of_procurement }} | Expiry Date: {{ key.expiry_date }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

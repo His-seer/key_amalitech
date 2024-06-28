@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Access Keys</title>
+</head>
+<body>
+    <h1>All Access Keys</h1>
+    <ul>
+        {% for key in keys %}
+        <li>{{ key.user.email }} - Status: {{ key.status }} | Date of Procurement: {{ key.date_of_procurement }} | Expiry Date: {{ key.expiry_date }}
+            {% if key.status != 'revoked' %}
+            <a href="{% url 'revoke_key' key.id %}">Revoke</a>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
